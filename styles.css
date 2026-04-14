@@ -1,1 +1,30 @@
-/* Пиши стили тут */
+.rating input {
+    display: none;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 5px;
+}
+
+.rating label {
+    cursor: pointer;
+    background-image: url("img/star-empty.svg");
+    width: 50px;
+    height: 50px;
+}
+
+.rating label:before {
+    content: "";
+    background-image: url("img/star-empty.svg");
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    background-image: url("img/star-empty.svg"), url("img/star.svg");
+}
